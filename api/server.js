@@ -4,7 +4,7 @@ const cors = require("cors");
 
 require('dotenv').config();
 
-// const dogsRouter = require("./dogs/dogs-router.js");
+const dogsRouter = require("./dogs/dogs-router.js");
 
 const server = express();
 
@@ -12,7 +12,7 @@ server.use(helmet());
 server.use(express.json());
 server.use(cors());
 
-// server.use('/api/dogs', dogsRouter);
+server.use('/api/dogs', dogsRouter);
 
 server.use('/', (req, res, next) => {
     res.status(200).json({ message: "Api running!"})
