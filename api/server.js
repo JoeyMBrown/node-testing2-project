@@ -14,7 +14,7 @@ server.use(cors());
 
 server.use('/api/dogs', dogsRouter);
 
-server.use('/', (req, res, next) => {
+server.use('/', (req, res, next) => { // eslint-disable-line
     res.status(200).json({ message: "Api running!"})
 })
 
