@@ -14,8 +14,8 @@ async function addDog (dog) {
     return findById(id)
 }
 
-function deleteDog(id) {
-    db('dogs').where('dog_id', id).del()
+async function deleteDog(id) {
+    await db('dogs').where('dog_id', id).del()
     return find()
 }
 
