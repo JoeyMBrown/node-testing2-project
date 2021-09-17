@@ -15,8 +15,9 @@ async function addDog (dog) {
 }
 
 async function deleteDog(id) {
+    const dog = await findById(id)
     await db('dogs').where('dog_id', id).del()
-    return find()
+    return dog
 }
 
 module.exports = {
