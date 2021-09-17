@@ -4,7 +4,7 @@ const cors = require("cors");
 
 require('dotenv').config();
 
-const dogsRouter = require("./dogs/dogs-router.js");
+const dogsRouter = require("./dogs/dogs-router");
 
 const server = express();
 

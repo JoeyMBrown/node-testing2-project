@@ -8,17 +8,16 @@ function findById(id) {
     return db('dogs').where('dog_id', id).first()
 }
 
-function addDog(dog) {
-    const [id] = db('dogs').insert(dog)
+async function addDog (dog) {
+    const [id] = await db('dogs').insert(dog)
 
     return findById(id)
 }
 
 function deleteDog(id) {
-    return db('dogs').where('dog_id', id).del()
+    db('dogs').where('dog_id', id).del()
+    return find()
 }
-
-
 
 module.exports = {
     find,
